@@ -1,0 +1,19 @@
+{
+  "name": "hermes-whatsapp-agent",
+  "version": "1.0.0",
+  "description": "WhatsApp linked-device gateway to local Claude Code / Codex CLIs with vault task dispatch",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "reset": "rm -rf data/sessions.json",
+    "logout": "rm -rf auth data/sessions.json",
+    "link": "./link.sh",
+    "test": "node --test *.test.js"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.7.9",
+    "pino": "^9.0.0",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "private": true
+}

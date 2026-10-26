@@ -1,0 +1,22 @@
+node_modules/
+
+# WhatsApp linked-device session — 68 files including creds.json and the Signal
+# pre-keys. Anyone with this directory can impersonate the linked device and read
+# the account's messages. It is a credential, not state: never commit it, and if it
+# ever leaks, unlink the device from WhatsApp immediately and re-pair.
+auth/
+
+# Runtime state, and it is personal: events.ndjson is a running log of real message
+# and ping text, sessions.json holds live conversation state, dispatch-inbox holds
+# queued jobs mid-flight. None of it is source, all of it is regenerated.
+data/
+
+# Machine-local overrides
+.env
+.env.*
+*.log
+.DS_Store
+
+# Your local config (copy config.example.json to config.json)
+config.json
+!.env.example

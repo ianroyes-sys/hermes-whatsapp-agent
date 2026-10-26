@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Keeps Hermes running in the background and restarts it if it exits.
+  Replace every REPLACE_ME value, save as
+  ~/Library/LaunchAgents/com.example.hermes-whatsapp-agent.plist, then:
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.example.hermes-whatsapp-agent.plist
+  If you change the Label, set HERMES_LAUNCHD_LABEL to match so link.sh can restart it.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.example.hermes-whatsapp-agent</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/bin/node</string>
+        <string>REPLACE_ME/hermes-whatsapp-agent/index.js</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>REPLACE_ME/hermes-whatsapp-agent</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>REPLACE_ME_HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+        <key>HOME</key>
+        <string>REPLACE_ME_HOME</string>
+        <key>VAULT_PATH</key>
+        <string>REPLACE_ME_HOME/Developer/Ideaverse</string>
+    </dict>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>ThrottleInterval</key>
+    <integer>10</integer>
+    <key>StandardOutPath</key>
+    <string>REPLACE_ME_HOME/Library/Logs/hermes-agent.log</string>
+    <key>StandardErrorPath</key>
+    <string>REPLACE_ME_HOME/Library/Logs/hermes-agent.log</string>
+</dict>
+</plist>

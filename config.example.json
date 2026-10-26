@@ -1,0 +1,12 @@
+{
+  "botName": "Hermes",
+  "ownerName": "the owner",
+  "replyPrefix": "🪽 ",
+  "model": "haiku",
+  "dispatchModel": "sonnet",
+  "respondToSelfChat": true,
+  "allowFrom": [],
+  "replyTimeoutSeconds": 240,
+  "taskTimeoutMinutes": 12,
+  "agentTimeoutMinutes": 20
+}
